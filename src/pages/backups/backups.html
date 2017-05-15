@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Backups</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <table border="1">
+                <tr>
+                    <th># </th>
+                    <th>Key </th>                    
+                    <th> value</th>
+                </tr>
+                <tr *ngFor="let res of displayResult; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{res.name}}</td>                    
+                    <td>{{res.data}}</td>
+                </tr>
+            </table>
+        </ion-item>
+    </ion-list>    
+</ion-content>
+
+<nav-footer>loading nav footer</nav-footer>
