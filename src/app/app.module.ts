@@ -22,9 +22,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { Utils } from '../utility/Utils';
 import { Logger } from '../utility/Logger';
 import { AuthGuard } from '../Guards/auth-guard';
-import { SideMenuPage } from '../pages/side-menu-page/side-menu-page';
-
-
 
 //services
 import { AuthService } from '../providers/auth-service';
@@ -35,7 +32,7 @@ import { DashBoardService } from '../providers/dashboard-service';
 //ionic
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-//import { IonicPage, NavController, NavParams } from '../../node_modules/ionic-angular';
+import { IonicPage, NavController, NavParams } from '../../node_modules/ionic-angular';
 
 //export let APP_CONFIG = new InjectionToken<AppConfig>('app.config');
 
@@ -61,8 +58,7 @@ const appRoutes: Routes = [
     BackupsPage,
     PageNotFoundComponent,
     NavFooterPage,
-    DashBoardMainPage,
-    SideMenuPage
+    DashBoardMainPage    
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
