@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AssetsService } from '../../providers/assets-service';
 import { Utils } from '../../utility/Utils';
 import { Logger } from '../../utility/Logger';
-import { GenericData } from '../../Models/common';
+import { GenericData } from '../../Models/common-models';
 
 @Component({
     selector: 'assets',

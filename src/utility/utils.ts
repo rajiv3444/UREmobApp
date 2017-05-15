@@ -1,6 +1,6 @@
 import { Headers, RequestOptions } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { GenericData } from '../Models/common';
+import { GenericData } from '../Models/common-models';
 //import { LoginPage } from '../Pages/Login/Login';
 
 @Injectable()

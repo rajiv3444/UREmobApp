@@ -3,15 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Http, HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
-//import { Contacts } from '@ionic-native/contacts';
 
 //#
 import { RouterModule, Routes } from '@angular/router';
 
 //user defined
 import { AboutPage } from '../pages/about/about';
-//import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { AssetsPage } from '../pages/assets/assets';
 import { BackupsPage } from '../pages/backups/backups';
@@ -51,7 +48,6 @@ const appRoutes: Routes = [
   declarations: [
     MyApp,
     AboutPage,
-    HomePage,
     LoginPage,
     TabsPage,
     AssetsPage,
@@ -70,7 +66,6 @@ const appRoutes: Routes = [
   entryComponents: [
     MyApp,
     AboutPage,
-    HomePage,
     LoginPage,
     TabsPage
   ],

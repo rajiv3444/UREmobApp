@@ -5,7 +5,7 @@ import { AuthService } from '../../providers/auth-service';
 import { Http, Response, Headers, RequestOptions, HttpModule } from '@angular/http';
 import { Utils } from '../../utility/Utils';
 import { Logger } from '../../utility/Logger';
-import { AssetsData } from '../../Models/Assets';
+import { AssetsData } from '../../Models/assets-models';
 
 
 import 'rxjs/add/operator/map';
