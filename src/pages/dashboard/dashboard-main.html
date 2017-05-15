@@ -11,10 +11,10 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-grid style="background-color:lightgray; text-align: left; padding: 0 10px 10px">
+    <ion-grid style="background-color:#c7e4f9; text-align: left; padding: 0 10px 10px">
         <ion-row>
             <ion-col>
-                Backup Summary
+                <h6>Backup Summary</h6>
             </ion-col>
         </ion-row>
         <ion-row>
@@ -31,16 +31,51 @@
                 </ion-label>
             </ion-col>
             <ion-col style="border: 2px solid darkgray;height: 120px;text-align: center;">
-                {{backupSummary.protectedCount}}                
+                {{backupSummary.protectedCount}}
                 <ion-label>
                     Protected
                 </ion-label>
             </ion-col>
-        </ion-row>       
+        </ion-row>
     </ion-grid>
 
     <br />
-
+    <!--Storage-->
+    <ion-grid style="background-color:#c7e4f9; text-align: left; padding: 0 10px 10px">
+        <ion-row>
+            <ion-col>
+                <h6>Storage</h6>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col style="border: 1px solid darkgray;text-align: center;">
+                Name
+            </ion-col>
+            <ion-col style="border: 1px solid darkgray;text-align: center;">
+                Total Size
+            </ion-col>
+            <ion-col style="border: 1px solid darkgray;text-align: center;">
+                Currrent Free Size
+            </ion-col>
+            <ion-col style="border: 1px solid darkgray;text-align: center;">
+                Usage
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col style="border: 1px solid darkgray;">
+                1
+            </ion-col>
+            <ion-col style="border: 1px solid darkgray;">
+                2
+            </ion-col>
+            <ion-col style="border: 1px solid darkgray;">
+                3
+            </ion-col>
+            <ion-col style="border: 1px solid darkgray;">
+                4
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
     <ion-list>
         <ion-item>
