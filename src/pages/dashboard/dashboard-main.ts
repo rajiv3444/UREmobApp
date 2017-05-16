@@ -10,6 +10,7 @@ import { Logger } from '../../utility/Logger';
 export class DashBoardMainPage {
     shownMain: any;
     backupSummary: any;
+    storage: any = [];
     mains = [
         { name: 'Assets', id: 1, items: [{ subName: 'Get Assets', routerLink: '/assets' }, { subName: 'M1-Sub-2', routerLink: '/dashboardmain' }] },
         { name: 'Backups', id: 2, items: [{ subName: 'Bavkups Sub menu-1', routerLink: '/test' }, { subName: 'Backups - Sub menu-2', routerLink: '/test' }] },
@@ -29,6 +30,7 @@ export class DashBoardMainPage {
         };
 
         this.GetSummaryCounts();
+        this.GetStorageDetils();
     }
 
     toggleMain(main) {
@@ -51,7 +53,18 @@ export class DashBoardMainPage {
                 this.backupSummary.protectedCount = jsonResult['backup_protected'];
             },
             err => {
-                this.logger.LogError('Erro while fetching assets data');
+                this.logger.LogError('Erro while fetching summary data');
+            });
+
+    }
+
+    GetStorageDetils() {
+        this.dashBoardService.GetStorage()
+            .subscribe((resp) => {
+                var jsonResult = JSON.parse(resp['_body']);
+                this.storage = jsonResult.storage;            },
+            err => {
+                this.logger.LogError('Erro while fetching storage data');
             });
 
     }

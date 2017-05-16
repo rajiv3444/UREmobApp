@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Jobs</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ <ion-grid style="text-align: left; padding: 0 10px 10px">
+        <h6>Active Jobs</h6>
+
+        <table border="1" style="border: 1px solid darkgray; width: 100%;">
+            <tr style="text-align: center;">
+                <th>#</th>
+                <th>Assets</th>
+                <th>Status</th>
+                <th>Type</th>
+                <th>Duraion</th>
+            </tr>
+            <tr *ngFor="let job of activeJobs; let i=index;">
+                <td>
+                    {{i+1}}                    
+                </td>
+                <td>
+                    {{job.asset_name}}                    
+                </td>
+                <td>
+                     {{job.status}}   
+                </td>
+                <td>
+                     {{job.type}}   
+                </td>
+                <td>
+                     {{job.duration}}   
+                </td>
+            </tr>
+        </table>
+    </ion-grid>
+</ion-content>
+<nav-footer>loading nav footer</nav-footer>

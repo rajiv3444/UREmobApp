@@ -26,7 +26,7 @@ export class LoginPage {
     this.utils._isAuthentic = false;
     this.loginStatus = '';
     this.credentials.username = 'root';
-    this.credentials.password = 'afour123';
+    this.credentials.password = 'unitrends1';
   }
 
   ionViewDidLoad() {

@@ -12,6 +12,7 @@ import { AboutPage } from '../pages/about/about';
 import { LoginPage } from '../pages/login/login';
 import { AssetsPage } from '../pages/assets/assets';
 import { BackupsPage } from '../pages/backups/backups';
+import { JobsPage } from '../pages/jobs/jobs';
 import { NavFooterPage } from '../pages/footer/nav-footer';
 import { DashBoardMainPage } from '../pages/dashboard/dashboard-main';
 import { PageNotFoundComponent } from '../pages/others/not-found';
@@ -25,6 +26,7 @@ import { AuthService } from '../providers/auth-service';
 import { AssetsService } from '../providers/assets-service';
 import { BackupsService } from '../providers/backups-service';
 import { DashBoardService } from '../providers/dashboard-service';
+import { JobsService } from '../providers/jobs-service';
 
 //ionic
 import { StatusBar } from '@ionic-native/status-bar';
@@ -39,6 +41,7 @@ const appRoutes: Routes = [
   { path: 'about', component: AboutPage },  
   { path: 'assets', component: AssetsPage, canActivate:[AuthGuard] },
   { path: 'backups', component: BackupsPage, canActivate:[AuthGuard] },
+  { path: 'jobs', component: JobsPage, canActivate:[AuthGuard] },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 
@@ -52,6 +55,7 @@ const appRoutes: Routes = [
     TabsPage,
     AssetsPage,
     BackupsPage,
+    JobsPage,
     PageNotFoundComponent,
     NavFooterPage,
     DashBoardMainPage    
@@ -75,6 +79,7 @@ const appRoutes: Routes = [
     AssetsService,
     BackupsService,
     DashBoardService,
+    JobsService,
     Utils,
     Logger,
     AuthGuard,
