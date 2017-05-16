@@ -4,7 +4,34 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding>
-    <ion-list>
+    <table border="1" style="width:100%">
+        <tr>
+            <th># </th>
+            <th>Name </th>
+            <th>IP Address</th>
+        </tr>
+
+        <tr *ngFor="let item of displayAssets; let k = index" (click)="toggleAssets(item)" [ngClass]="{active: isAssetsShown(item)}">
+            <td>{{k+1}}</td>
+            <td>
+                <ion-icon color="primary" [name]="item.children == undefined ? 'remove' : 'add'"></ion-icon>
+                {{item.name}}
+                <br />
+                <div *ngFor="let childrenIitem of item.children; let j = index" [hidden]="!isAssetsShown(item)">
+                    <ion-icon color="primary" [name]="childrenIitem.children == undefined ? 'remove' : 'add'"></ion-icon>
+                    --{{childrenIitem.description}}
+                    <br />
+                    <br/>
+                    <div *ngFor="let childrenitem of childrenIitem.children; let i = index" [hidden]="!isChildrenShown(childrenIitem)">
+                        ---{{childrenitem.name}}
+                        <br />
+                    </div>
+                </div>
+            </td>
+            <td>{{item.ip}}</td>
+        </tr>
+    </table>
+    <!--<ion-list>
         <ion-item>
             <table border="1">
                 <tr>
@@ -19,6 +46,6 @@
                 </tr>
             </table>
         </ion-item>
-    </ion-list>    
+    </ion-list>    -->
 </ion-content>
 <nav-footer>loading nav footer</nav-footer>
