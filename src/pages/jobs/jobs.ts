@@ -18,6 +18,7 @@ import { GenericData } from '../../Models/common-models';
 
 })
 export class JobsPage {
+  pageTitle:string = 'Jobs';
   activeJobs: any;
   public displayResult: any[] = [];
   constructor(private jobsService: JobsService, private logger: Logger, private alertController: AlertController) {
