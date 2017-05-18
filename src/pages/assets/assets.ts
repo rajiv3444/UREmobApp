@@ -6,9 +6,11 @@ import { GenericData } from '../../Models/common-models';
 
 @Component({
     selector: 'assets',
-    templateUrl: 'assets.html'
+    templateUrl: 'assets.html',
+    styles: ['.even { background-color: #ccc;}','.odd { background-color:#FFFFFF; }']
 })
 export class AssetsPage {
+    pageTitle:string = 'Assets';
     public displayResult: any[] = [];
     public displayAssets: any[] = [];
     shownMain: any;

@@ -8,6 +8,7 @@ import { Logger } from '../../utility/Logger';
     templateUrl: 'dashboard-main.html'
 })
 export class DashBoardMainPage {
+    pageTitle:string = 'Dashboard';
     shownMain: any;
     backupSummary: any;
     storage: any = [];

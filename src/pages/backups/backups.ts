@@ -9,6 +9,7 @@ import { GenericData } from '../../Models/common-models';
     templateUrl: 'backups.html'
 })
 export class BackupsPage {
+    pageTitle:string = 'Backups';
     public displayResult: any[] = [];
     constructor(private backupsService: BackupsService, private utils: Utils, private logger:Logger) {
         this.GetBackup();

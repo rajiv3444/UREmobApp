@@ -16,6 +16,7 @@ import 'rxjs/Rx';
   templateUrl: 'login.html'
 })
 export class LoginPage {
+  pageTitle:string = 'Login';
   backup: any;
   loginStatus: string;
   public displayResult: any[] = [];
@@ -23,11 +24,18 @@ export class LoginPage {
   //router: Router;
 
   constructor(private authService: AuthService, private utils: Utils, private logger: Logger, private router: Router, private alertController: AlertController) {
+    //this.DoLogout();
     this.utils._isAuthentic = false;
     this.loginStatus = '';
     this.credentials.username = 'root';
     this.credentials.password = 'unitrends1';
+
   }
+  DoLogout()
+  {
+    this.utils.CleanAuthDetails();
+  }
+
 
   ionViewDidLoad() {
     this.logger.LogInfo('ionViewDidLoad Login');
@@ -72,7 +80,7 @@ export class LoginPage {
       buttons: ['Ok']
     });
     alert.present();
-  }
+  }  
 }
 
 

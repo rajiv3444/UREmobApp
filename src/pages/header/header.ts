@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Logger } from '../../utility/Logger';
 
 
@@ -7,9 +7,8 @@ import { Logger } from '../../utility/Logger';
   templateUrl: 'header.html',
 })
 export class HeaderPage {
-
- constructor(private logger: Logger) {
-    
+@Input() headerTitle: string;
+ constructor(private logger: Logger) {    
   }
 
 }
