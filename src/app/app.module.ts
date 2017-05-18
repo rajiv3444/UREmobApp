@@ -13,7 +13,9 @@ import { LoginPage } from '../pages/login/login';
 import { AssetsPage } from '../pages/assets/assets';
 import { BackupsPage } from '../pages/backups/backups';
 import { JobsPage } from '../pages/jobs/jobs';
+import { HeaderPage } from '../pages/header/header';
 import { NavFooterPage } from '../pages/footer/nav-footer';
+import { SideMenuPage} from '../pages/side-menu/side-menu';
 import { DashBoardMainPage } from '../pages/dashboard/dashboard-main';
 import { PageNotFoundComponent } from '../pages/others/not-found';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -57,7 +59,9 @@ const appRoutes: Routes = [
     BackupsPage,
     JobsPage,
     PageNotFoundComponent,
+    HeaderPage,
     NavFooterPage,
+    SideMenuPage,    
     DashBoardMainPage    
   ],
   imports: [

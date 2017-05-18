@@ -1,42 +1,53 @@
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>Jobs</ion-title>
-  </ion-navbar>
-
+  <app-header>loaing header...</app-header>
 </ion-header>
 
 
 <ion-content padding>
- <ion-grid style="text-align: left; padding: 0 10px 10px">
-        <h6>Active Jobs</h6>
+  <app-side-menu>side menu loading...</app-side-menu>
+  <ion-grid style="text-align: left; padding: 0 10px 10px">
+    <h6>Active Jobs</h6>
 
-        <table border="1" style="border: 1px solid darkgray; width: 100%;">
-            <tr style="text-align: center;">
-                <th>#</th>
-                <th>Assets</th>
-                <th>Status</th>
-                <th>Type</th>
-                <th>Duraion</th>
-            </tr>
-            <tr *ngFor="let job of activeJobs; let i=index;">
-                <td>
-                    {{i+1}}                    
-                </td>
-                <td>
-                    {{job.asset_name}}                    
-                </td>
-                <td>
-                     {{job.status}}   
-                </td>
-                <td>
-                     {{job.type}}   
-                </td>
-                <td>
-                     {{job.duration}}   
-                </td>
-            </tr>
-        </table>
-    </ion-grid>
+    <table border="1" style="border: 1px solid darkgray; width: 100%;">
+      <tr style="text-align: center;">
+        <th>#</th>
+        <th>Name</th>
+        <th>Asset</th>
+        <th>Status</th>
+        <th>Type</th>
+        <th>Duraion</th>
+        <th>Details</th>
+      </tr>
+      <tr *ngFor="let job of activeJobs; let i=index;">
+        <td>
+          {{i+1}}
+        </td>
+        <td>
+          <!--{{job.name}}-->
+        </td>
+        <td>
+          {{job.asset_name}}
+        </td>
+        <td>
+          <ion-label [color]="job.status == 'Error' ? 'danger' : 'black'">
+            {{job.status}}
+          </ion-label>
+        </td>
+        <td>
+          {{job.type}}
+        </td>
+        <td>
+          {{job.duration}}
+        </td>
+        <td>
+          <button ion-button (click)="AlertJobDetails(job)">
+          <ion-icon name="eye"></ion-icon>
+            </button>
+
+        </td>
+      </tr>
+    </table>
+    
+  </ion-grid>
 </ion-content>
 <nav-footer>loading nav footer</nav-footer>
