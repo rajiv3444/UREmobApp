@@ -1,4 +1,8 @@
-
+.full-popup
+{
+   width: 95% !important;
+   height: 95% !important;
+} 
 .even{
     background-color: #ccc;;
 }
@@ -13,4 +17,8 @@
 .ion-row-bg{
     background-color: #bcbcbc;
     border-bottom: 1px solid lightgray;
+ }
+ .textRed
+ {
+     color: red;
  }

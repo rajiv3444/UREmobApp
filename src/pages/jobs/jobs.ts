@@ -6,22 +6,15 @@ import { GenericData } from '../../Models/common-models';
 
 @Component({
   selector: 'page-jobs',
-  templateUrl: 'jobs.html',
-  //styleUrls:['../pages/jobs/jobs.css']
-  styles: [`
-  .full-popup
-  {
-    width: 95% !important;
-    height: 95% !important;
-  } 
-  `]
-
+  templateUrl: 'jobs.html'
 })
 export class JobsPage {
   pageTitle: string = 'Jobs';
   activeJobs: any;
+  isActiveJobFound: boolean = false;
   public displayResult: any[] = [];
   constructor(private jobsService: JobsService, private logger: Logger, private alertController: AlertController) {
+    this.isActiveJobFound = false;
     this.GetActiveJobs();
   }
 
@@ -29,17 +22,18 @@ export class JobsPage {
     this.jobsService.GetJobs('active').subscribe((resp) => {
       var jsonResult = JSON.parse(resp['_body']);
       this.activeJobs = jsonResult.data;
+      this.isActiveJobFound = this.activeJobs != undefined && this.activeJobs.length > 0;
     },
       err => {
-        this.logger.LogError('Erro while fetching storage data');
+        this.logger.LogError('Erro while fetching data');
       });
   }
 
-  AlertJobDetails(job) {    
+  AlertJobDetails(job) {
 
     let row = "";
     if (job != null && job != undefined) {
-this.logger.LogInfo("not null - " + job.id);
+      this.logger.LogInfo("not null - " + job.id);
 
       for (let key in job) {
         row += "<tr><td>" + key + "</td><td>" + job[key] + "</td></tr>";
@@ -54,7 +48,7 @@ this.logger.LogInfo("not null - " + job.id);
       });
       alert.present();
     }
-    else{
+    else {
       this.logger.LogInfo("----------- ob null -------");
     }
   }
