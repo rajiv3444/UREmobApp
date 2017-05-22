@@ -3,7 +3,7 @@ import { Http, Response, Headers, RequestOptions, RequestMethod, HttpModule } fr
 import { headerCaseNormalise } from '../../node_modules/header-case-normalizer';
 import { Utils } from '../utility/Utils';
 import { Logger } from '../utility/Logger';
-import {LoginResponse} from '../Models/auth-models';
+//import {LoginResponse} from '../Models/auth-models';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Rx';
 
@@ -14,7 +14,7 @@ export class AssetsService {
   constructor(public http: Http, private utils: Utils, private logger: Logger) {    
   }  
 
-  GetAssets(): Observable<LoginResponse> {    
+  GetAssets(): Observable<any> {    
     return this.http.get(this.utils.FormateUrl('api/assets/?sid=1'), this.utils.GetHttpOptions());
   }
 
