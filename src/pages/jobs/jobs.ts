@@ -18,7 +18,7 @@ import { GenericData } from '../../Models/common-models';
 
 })
 export class JobsPage {
-  pageTitle:string = 'Jobs';
+  pageTitle: string = 'Jobs';
   activeJobs: any;
   public displayResult: any[] = [];
   constructor(private jobsService: JobsService, private logger: Logger, private alertController: AlertController) {
@@ -35,25 +35,27 @@ export class JobsPage {
       });
   }
 
-  AlertJobDetails(job) {
-    // for (let key in job) {
-    //   let genericData = new GenericData();
-    //   genericData.name = key;
-    //   genericData.data = job[key];
-    //   this.displayResult.push(genericData);
-    // }
-    let row = "";
-    for (let key in job) {
-      row += "<tr><td>" + key + "</td><td>" + job[key] + "</td></tr>";
-    }
+  AlertJobDetails(job) {    
 
-    let alert = this.alertController.create({
-      title: 'Job - ' + job.id,
-      subTitle: job.asset_name,
-      message: "<table border='1'><tr><th>Key</th><th> value</th></tr>" + row + "</table>",
-      buttons: ['Ok'],
-      cssClass: 'full-popup',      
-    });
-    alert.present();
+    let row = "";
+    if (job != null && job != undefined) {
+this.logger.LogInfo("not null - " + job.id);
+
+      for (let key in job) {
+        row += "<tr><td>" + key + "</td><td>" + job[key] + "</td></tr>";
+      }
+
+      let alert = this.alertController.create({
+        title: 'Job - ' + job.id,
+        subTitle: job.asset_name,
+        message: "<table border='1'><tr><th>Key</th><th> value</th></tr>" + row + "</table>",
+        buttons: ['Ok'],
+        cssClass: 'full-popup',
+      });
+      alert.present();
+    }
+    else{
+      this.logger.LogInfo("----------- ob null -------");
+    }
   }
 }
