@@ -1,0 +1,16 @@
+
+.even{
+    background-color: #ccc;;
+}
+.odd{
+    background-color: #FFFFFF;
+}
+
+.ion-grid-bg {
+  background-color: #e2e3e4;
+} 
+
+.ion-row-bg{
+    background-color: #bcbcbc;
+    border-bottom: 1px solid lightgray;
+ }

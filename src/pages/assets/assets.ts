@@ -6,8 +6,7 @@ import { GenericData } from '../../Models/common-models';
 
 @Component({
     selector: 'assets',
-    templateUrl: 'assets.html',
-    styles: ['.even { background-color: #ccc;}','.odd { background-color:#FFFFFF; }']
+    templateUrl: 'assets.html'
 })
 export class AssetsPage {
     pageTitle:string = 'Assets';
