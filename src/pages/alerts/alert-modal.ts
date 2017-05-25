@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { NavParams, ViewController } from 'ionic-angular';
 
@@ -15,7 +14,4 @@ export class AlertsModalPage implements OnInit {
         this.displayData = this.navParams.get('alertItemsArray');
     }
 
-    // DismissModalPage() {
-    //     this.viewCtrl.dismiss();
-    // }
 }
