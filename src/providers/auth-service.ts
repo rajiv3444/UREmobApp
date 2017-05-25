@@ -14,8 +14,9 @@ export class AuthService {
   }
   
   DoLogin(username: string, password: string): Observable<LoginResponse> {    
-    let body = JSON.stringify({ username, password });        
-    return this.http.post('http://192.168.8.160://api/login', body, { headers: this.utils.GetEmptyHeader() });
+    let body = JSON.stringify({ username, password });  
+    let apiIp = '10.102.48.91';      //192.168.8.160
+    return this.http.post('http://'+apiIp+'/api/login', body, { headers: this.utils.GetEmptyHeader() });
   } 
 }
 

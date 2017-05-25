@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 export class AuthGuard implements CanActivate {
     //constructor(private loginPage: LoginPage, private logger: Logger) { 
     constructor(private logger: Logger, private utils: Utils, private router: Router) {
-
         this.logger.LogInfo('Auth Guard called... IsAuthenticated:' + this.utils._isAuthentic);
     }
     canActivate() {

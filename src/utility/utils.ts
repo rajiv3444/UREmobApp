@@ -1,15 +1,16 @@
 import { Headers, RequestOptions } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { GenericData } from '../Models/common';
+import { GenericData } from '../Models/common-models';
 //import { LoginPage } from '../Pages/Login/Login';
 
+export const AUTHTOKEN:string = 'authToken';
+
 @Injectable()
-export class Utils { 
-    _isAuthentic:boolean;
-    constructor()
-    {        
+export class Utils {    
+    _isAuthentic: boolean;
+    constructor() {
         this._isAuthentic = false;
-    }           
+    }
     FormateUrl(api: string) {
         let wrapperApiUrlPrefix = 'http://localhost:54434';// "http://192.168.5.60:54434";
         return wrapperApiUrlPrefix + "/api/GenericApi/TestApi?api=" + api;
@@ -25,7 +26,7 @@ export class Utils {
         let httpRequestHeaders = this.GetEmptyHeader();
         httpRequestHeaders.append('Content-Type', 'application/json; charset=UTF-8');
         //httpRequestHeaders.append('Accept', 'application/json');
-        httpRequestHeaders.append('authtoken', this.GetAuthTokenLocal());
+        httpRequestHeaders.append(AUTHTOKEN, this.GetAuthTokenLocal());
         return httpRequestHeaders;
     }
 
@@ -35,27 +36,22 @@ export class Utils {
         return requestOptions;
     }
 
-    IsAuthenticated()
-    {
+    IsAuthenticated() {
         return this._isAuthentic;
     }
-    
-    // CreateBody(...params:any[])
-    // {
-    //     //let temp = JSON.stringify();
-    //     //let paramCount = params.length;
-    //     let user = 'rr';
-    //     let pwd = 'ttt';
-    //     return JSON.stringify({params});
-    // }
 
     GetAuthTokenLocal() {
-        return localStorage.getItem('authToken');
+        return localStorage.getItem(AUTHTOKEN);
     }
 
     SetAuthTokenLocal(authToken: string) {
-        localStorage.setItem('authToken', authToken);
-    }    
+        localStorage.setItem(AUTHTOKEN, authToken);
+    }
+
+    CleanAuthDetails() {
+        localStorage.removeItem(AUTHTOKEN);
+        return '';
+    }
 
     FormKeyValueData(jsonResult) {
         let formedData: any[] = [];
