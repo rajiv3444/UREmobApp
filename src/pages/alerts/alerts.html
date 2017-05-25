@@ -11,7 +11,7 @@
                     <ion-col col-3>Severity</ion-col>
                     <ion-col col-5>Message</ion-col>
                 </ion-row>
-                <ion-row (click)="AlertDetail(item)" *ngFor="let item of displayAlerts; let k = index; let isOdd=odd; let isEven=even"  [class.even]="isEven">  
+                <ion-row (click)="OpenModalPage(item)" *ngFor="let item of displayAlerts; let k = index; let isOdd=odd; let isEven=even"  [class.even]="isEven">  
                     <ion-col col-1>
                         {{k+1}}
                     </ion-col>
@@ -28,4 +28,4 @@
     </ion-item>
   
 </ion-content>
-<nav-footer>loading nav footer</nav-footer>
+<!--<nav-footer>loading nav footer</nav-footer>-->
