@@ -14,10 +14,13 @@ import { AssetsPage } from '../pages/assets/assets';
 import { BackupsPage } from '../pages/backups/backups';
 import { JobsPage } from '../pages/jobs/jobs';
 import { HeaderPage } from '../pages/header/header';
+import { HeaderModelPage } from '../pages/header/header-modal-page';
+
 import { NavFooterPage } from '../pages/footer/nav-footer';
 import { SideMenuPage } from '../pages/side-menu/side-menu';
 import { DashBoardMainPage } from '../pages/dashboard/dashboard-main';
 import { AlertsPage } from '../pages/alerts/alerts';
+import { AlertsModalPage } from '../pages/alerts/alert-modal';
 import { PageNotFoundComponent } from '../pages/others/not-found';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Utils } from '../utility/Utils';
@@ -64,10 +67,12 @@ const appRoutes: Routes = [
     JobsPage,
     PageNotFoundComponent,
     HeaderPage,
+    HeaderModelPage,
     NavFooterPage,
     SideMenuPage,
     DashBoardMainPage,
-    AlertsPage
+    AlertsPage,
+    AlertsModalPage
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -80,7 +85,8 @@ const appRoutes: Routes = [
     MyApp,
     AboutPage,
     LoginPage,
-    TabsPage
+    TabsPage,
+    AlertsModalPage
   ],
   providers: [
     StatusBar,
