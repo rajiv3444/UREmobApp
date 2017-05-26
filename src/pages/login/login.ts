@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, Validators,FormBuilder } from '@angular/forms';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
 import { Http, Response, Headers, RequestOptions, HttpModule } from '@angular/http';
 import { Utils } from '../../utility/Utils';
 import { Logger } from '../../utility/Logger';
 import { AssetsData } from '../../Models/assets-models';
-
-
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 
@@ -21,15 +20,21 @@ export class LoginPage {
   loginStatus: string;
   public displayResult: any[] = [];
   credentials = { username: '', password: '' };
+   form:FormGroup;
+ 
   //router: Router;
 
-  constructor(private authService: AuthService, private utils: Utils, private logger: Logger, private router: Router, private alertController: AlertController) {
+  constructor(private authService: AuthService, private utils: Utils, private logger: Logger, private router: Router, private alertController: AlertController,private formBuilder:FormBuilder) {
     //this.DoLogout();
     this.utils._isAuthentic = false;
     this.loginStatus = '';
-    this.credentials.username = 'root';
-    this.credentials.password = 'unitrends1';
-
+    this.credentials.username = '';
+    this.credentials.password = '';
+    this.form= formBuilder.group({
+    username: ['', Validators.compose([ Validators.minLength(3), Validators.maxLength(30), Validators.required])],
+    password: ['', Validators.compose([ Validators.maxLength(30), Validators.required])],
+    });
+   
   }
   DoLogout()
   {
@@ -81,6 +86,7 @@ export class LoginPage {
     });
     alert.present();
   }  
+
 }
 
 

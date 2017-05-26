@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Http, HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
+import { FormsModule } from '@angular/forms';  //Form validation
+//import { CustomFormsModule } from 'ng2-validation'
 
 //#
 import { RouterModule, Routes } from '@angular/router';
@@ -78,6 +80,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     HttpModule,
+    FormsModule,
+   
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
